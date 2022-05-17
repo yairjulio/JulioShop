@@ -1,11 +1,14 @@
 import './App.css';
-import Navbar from './Navbar.js';
+import Navbar from './components/Navbar.js';
+import ItemListContainer from './components/ItemListContainer.js';
 
 const App = () => {
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <h1>Mi primera aplicacion en ReactJs</h1>
+      <>
+        <Navbar />
+        <ItemListContainer />
+      </>
     </div>
   );
 }
