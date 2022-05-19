@@ -2,6 +2,48 @@
   text-align: center;
 }
 
+span {
+  cursor:pointer; 
+}
+
+.shopicon{
+  width:50px;
+  height:50px;
+}
+
+.number{
+  margin:10px;
+  align-items: center;
+}
+
+.minus, .plus{
+  width:40px;
+  height:40px;
+  background:#f2f2f2;
+  border-radius:4px;
+  padding:5px 5px 5px 5px;
+  border:1px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.agregar-carrito{
+  width: 180px;
+}
+
+
+input{
+  height:40px;
+  width: 100px;
+  text-align: center;
+  font-size: 26px;
+  border:1px solid #ddd;
+  border-radius:4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

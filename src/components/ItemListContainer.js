@@ -1,6 +1,8 @@
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
     return(
-        <h1>Landing text coming from ItemListContainer</h1>
+        <>
+        <h1>Bienvenido {props.name}</h1>
+        </>
     )
 }
 
