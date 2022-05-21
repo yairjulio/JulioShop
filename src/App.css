@@ -1,9 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+
+*, *:before, *:after {
+  box-sizing: border-box
+}
+
 .App {
   text-align: center;
 }
 
 span {
   cursor:pointer; 
+}
+
+.navbar, .h1{
+  font: 16px "Lato", Arial, sans-serif;
+  font-weight: 700;
 }
 
 .shopicon{
@@ -43,6 +54,84 @@ input{
   display: inline-block;
   vertical-align: middle;
 }
+
+/* Renderizado de items */
+
+.contenedor-productos{
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+  background-size: cover;
+  font: 14px/20px "Lato", Arial, sans-serif;
+  color: #9E9E9E;
+}
+
+.wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card-producto {
+  background: white;
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 1;
+}
+
+.card-producto_imagen {
+  position: relative;
+  height: 250px;
+  margin-bottom: 55px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.card-producto_tipo {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: #EC9B3B;
+}
+
+.card-producto_titulo {
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.card-producto_precio {
+  padding: 20px;
+  margin-bottom: 10px;  
+}
+
+.card-producto_stock {
+  color: white;
+  background: #EC9B3B;
+  height: 40px;
+  font-weight: 700;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+
+}
+
+.card-producto_stock.valor {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+}
+
 
 .App-logo {
   height: 40vmin;
