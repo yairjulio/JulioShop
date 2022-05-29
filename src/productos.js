@@ -12,9 +12,9 @@ const productos = [
     },
     {
         id: 2,
-        title: "Hamilton",
+        title: "Alexander Hamilton",
         type: "Funko Pop",
-        description: "Funko Pop featuring Hamilton from the Hamilton Broadway show",
+        description: "Funko Pop featuring Alexander Hamilton from the Hamilton Broadway show",
         categoryId: 2,
         category: "Shows",
         price: 5000,
@@ -71,7 +71,7 @@ const productos = [
         type: "Funko Pop",
         description: "Funko Pop featuring Whitney Houston",
         categoryId: 4,
-        category: "Characters",
+        category: "Singers",
         price: 1000,
         stock: 10,
         picture:["https://cdn.shopify.com/s/files/1/1052/2158/products/62217_WhitneyHouston_Superbowl_POP_GLAM-WEB.png?v=1644451387"]

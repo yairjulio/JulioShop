@@ -12,7 +12,7 @@ span {
   cursor:pointer; 
 }
 
-.navbar, .h1{
+.navbar, h1, .nav-item{
   font: 16px "Lato", Arial, sans-serif;
   font-weight: 700;
 }
