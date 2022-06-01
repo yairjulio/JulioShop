@@ -1,7 +1,15 @@
-
+import { useState } from 'react';
 import ItemCount from './ItemCount.js';
+import ShowCart from './ShowCart.js';
 
 const ItemDetail = ({ item }) => {
+
+    const [itemCount, setItemCount] = useState(0);
+
+    const onAdd = (cantidad) => {
+        alert("Items agregados");
+        setItemCount(cantidad);
+    }
 
     return(
         <>
@@ -23,12 +31,16 @@ const ItemDetail = ({ item }) => {
                                 <div class="card-producto-detail_stock">
                                     <div class="valor">Stock: {item.stock}</div>
                                 </div>
-                                <ItemCount stock={item.stock} initial="1"/>
+                                {
+                                    itemCount === 0
+                                    ? <ItemCount stock={item.stock} onAdd={onAdd} initial={itemCount}/>
+                                    : <ShowCart/>
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
-                : <p>Cargando...</p>
+                : <p>Cargando....</p>
             }
         </>
     )

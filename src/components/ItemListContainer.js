@@ -11,7 +11,7 @@ const ItemListContainer = () => {
     const { id } = useParams();
     
     useEffect(() => {
-        fetch(2000,id ? productos.filter(item => item.categoryId == parseInt(id)) : productos)
+        fetch(2000,id ? productos.filter(item => item.categoryId === parseInt(id)) : productos)
             .then(result => setDatos(result))
             .catch(err => console.log(err))
     },[id]);

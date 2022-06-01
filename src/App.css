@@ -271,6 +271,12 @@ input{
   top: 85%;
 }
 
+.boton-checkout{
+  width: 40%;
+  position: absolute;
+  top: 85%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

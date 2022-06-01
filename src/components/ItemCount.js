@@ -1,25 +1,18 @@
 import { useState } from 'react'
 
 
-const ItemCount = (props) => {
+const ItemCount = ({stock, initial, onAdd }) => {
     
-    const[contador, setContador] = useState(parseInt(props.initial));
-    const[stock, setStock] = useState(parseInt(props.stock));
+    const[contador, setContador] = useState(parseInt(initial));
 
     const increment = () => {
-        if(contador<(props.stock)) setContador(contador+1);
+        if(contador<(stock)) setContador(contador+1);
     }
 
     const decrement = () => {
-        if(contador>(props.initial)) setContador(contador-1);
+        if(contador>(initial)) setContador(contador-1);
     }
 
-    const onAdd = () => {
-        if(contador<=stock){
-            alert("Items agregados");
-            setStock(stock-contador);
-        }
-    }
 
     return(
         <>
