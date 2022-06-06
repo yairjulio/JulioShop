@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ItemCount from './ItemCount.js';
 import ShowCart from './ShowCart.js';
+import { CartContext } from './CartContext.js';
+
 
 const ItemDetail = ({ item }) => {
 
     const [itemCount, setItemCount] = useState(0);
+    const test = useContext(CartContext);
 
     const onAdd = (cantidad) => {
         alert("Items agregados");
         setItemCount(cantidad);
+        test.addToCart(item, cantidad);
     }
 
     return(

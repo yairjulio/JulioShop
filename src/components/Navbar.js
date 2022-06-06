@@ -21,7 +21,7 @@ const Navbar = () =>{
                 </div>
             </div>
             <ul className="navbar-nav navbar-right">
-                <CartWidget></CartWidget>
+                <Link to="/cart" style={{ color: 'white', textDecoration:'none' }}><CartWidget /></Link>
             </ul>
         </nav>
         </>
