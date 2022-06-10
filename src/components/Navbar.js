@@ -2,9 +2,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget.js';
 import Shop from '../img/Shop.png';
 import { Link } from 'react-router-dom';
+import { CartContext } from './CartContext.js';
+import { useContext } from 'react';
 
 
 const Navbar = () =>{
+
+    const items = useContext(CartContext);
+
+    const total = items.cartList.length;
+
     return(
         <>
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
@@ -21,7 +28,7 @@ const Navbar = () =>{
                 </div>
             </div>
             <ul className="navbar-nav navbar-right">
-                <Link to="/cart" style={{ color: 'white', textDecoration:'none' }}><CartWidget /></Link>
+                {(total) && <Link to="/cart" style={{ color: 'white', textDecoration:'none' }}><CartWidget /></Link>}              
             </ul>
         </nav>
         </>
