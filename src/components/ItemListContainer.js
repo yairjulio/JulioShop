@@ -1,21 +1,26 @@
 import ItemList from './ItemList.js';
-import fetch from '../fetch.js'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-const { productos } = require('../productos.js');
-
+import { firestoreFetch } from './firebaseFetch.js';
 
 const ItemListContainer = () => {
     
     const [datos, setDatos] = useState([]);
-    const { id } = useParams();
+    const { idCategory } = useParams();
     
     useEffect(() => {
-        fetch(2000,id ? productos.filter(item => item.categoryId === parseInt(id)) : productos)
+        firestoreFetch(idCategory)
             .then(result => setDatos(result))
-            .catch(err => console.log(err))
-    },[id]);
+            .catch(err => console.log(err));
+    }, [idCategory]);
     
+
+    useEffect(() => {
+        return (() => {
+            setDatos([]);
+        })
+    }, []);
+
     return(
         <>
             <ItemList items={datos} />

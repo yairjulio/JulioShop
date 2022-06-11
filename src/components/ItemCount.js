@@ -18,7 +18,7 @@ const ItemCount = ({stock, initial, onAdd }) => {
         <>
         <div className="number">
             <span className="minus" onClick={decrement}>-</span>
-            <input type="text" value = {contador}/>
+            <span className="input">{contador}</span>
             <span className="plus" onClick={increment}>+</span>
         </div>
         {
