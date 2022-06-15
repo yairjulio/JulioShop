@@ -21,8 +21,16 @@ const CartContextProvider = ({children}) => {
             encontrarDuplicado (check, cartList)
         }
         else {
-            item.quantity = cantidad
-            setCartList([...cartList,item])
+            setCartList([...cartList,
+                {
+                    id: item.id,
+                    title: item.title,
+                    stock: item.stock,
+                    picture: item.picture,
+                    price: item.price,
+                    quantity: cantidad
+                }
+            ]);
         }
     }
 
