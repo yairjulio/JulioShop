@@ -4,7 +4,7 @@ _Tienda online de items de Funko desarrollada para el curso React.js dictado por
 
 ## Deployment 🚀
 
-_Puedes ver el proyecto en vivo en_ [Vercel]()
+_Puedes ver el proyecto en vivo en_ [Vercel](https://julio-shop.vercel.app)
 
 ## Construido con 🛠️
 
