@@ -2,6 +2,9 @@ import { useState, useContext } from 'react';
 import ItemCount from './ItemCount.js';
 import ShowCart from './ShowCart.js';
 import { CartContext } from './CartContext.js';
+import { DetailContainer, WrapperDetail, ProductCardDetail, CardDetailImage, CardDetailImageType, ProductCardInfo, 
+    ProductCardType, ProductCardCategory, ProductCardTitle, ProductCardDescription, ProductCardPrice, 
+    ProductCardStock, ProductCardValue} from '../utils/StyledComp.js';
 
 
 const ItemDetail = ({ item }) => {
@@ -20,30 +23,30 @@ const ItemDetail = ({ item }) => {
             {
                 item.picture
                 ?
-                <div className="contenedor-producto">
-                    <div className="wrapper-detail">
-                        <div className="card-producto-detail">
-                            <div className="card-producto-detail_imagen">
-                                <img src={item.picture} className="card-producto-detail_imagen2" alt="producto" />
-                            </div>
-                            <div className="card-producto-detail_info">
-                                <div className="card-producto-detail_tipo">{item.type}</div>
-                                <div className="card-producto-detail_categoria">{item.category}</div>
-                                <div className="card-producto-detail_titulo">{item.title}</div>
-                                <div className="card-producto-detail_descripcion">{item.description}</div>
-                                <div className="card-producto-detail_precio">Precio: ${item.price}</div>
-                                <div className="card-producto-detail_stock">
-                                    <div className="valor">Stock: {item.stock}</div>
-                                </div>
+                <DetailContainer>
+                    <WrapperDetail>
+                        <ProductCardDetail>
+                            <CardDetailImage>
+                                <CardDetailImageType src={item.picture} alt="producto" />
+                            </CardDetailImage>
+                            <ProductCardInfo>
+                                <ProductCardType>{item.type}</ProductCardType>
+                                <ProductCardCategory>{item.category}</ProductCardCategory>
+                                <ProductCardTitle>{item.title}</ProductCardTitle>
+                                <ProductCardDescription>{item.description}</ProductCardDescription>
+                                <ProductCardPrice>Precio: ${item.price}</ProductCardPrice>
+                                <ProductCardStock>
+                                    <ProductCardValue>Stock: {item.stock}</ProductCardValue>
+                                </ProductCardStock>
                                 {
                                     itemCount === 0
                                     ? <ItemCount stock={item.stock} onAdd={onAdd} initial={itemCount}/>
                                     : <ShowCart/>
                                 }
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </ProductCardInfo>
+                        </ProductCardDetail>
+                    </WrapperDetail>
+                </DetailContainer>
                 : <p>Cargando....</p>
             }
         </>

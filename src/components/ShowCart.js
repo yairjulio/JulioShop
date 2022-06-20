@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import { CheckoutButton } from '../utils/StyledComp.js'
 
 const ShowCart = () => {
     return(
         <Link to='/cart'>
-            <button className="boton-checkout btn btn-success" type="button">CheckOut</button>
+            <CheckoutButton className="btn btn-success" type="button">CheckOut</CheckoutButton>
         </Link>
     )
 }

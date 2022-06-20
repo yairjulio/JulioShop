@@ -2,8 +2,9 @@ import { useContext } from 'react';
 import { CartContext } from './CartContext.js';
 import CartRender from './CartRender.js';
 import { Link } from 'react-router-dom';
+import { CartContainer, CartRenderContainer, CartInfoContainer, CartInfo, CartInfoSubtotal, CartInfoTitle, CartInfoTaxes, CartInfoTotal, CartCheckoutButton, DeleteAllItemsButton, ContinueButton, Wrapper, Title } from '../utils/StyledComp.js';
 import { serverTimestamp, setDoc, doc, collection, updateDoc, increment } from 'firebase/firestore';
-import db from './firebaseConfig.js';
+import db from '../utils/firebaseConfig';
 
 const Cart = () => {
     const { deleteCart, calcSubtotal, calcTotal, calcTaxes } = useContext(CartContext);
@@ -53,37 +54,37 @@ const Cart = () => {
     if (carrito.cartList.length === 0){
         return(
         <>
-        <h1>Tu carrito esta vacío</h1>
-        <div>
+        <Title>Tu carrito esta vacío</Title>
+        <Wrapper>
             <Link to="/">
-                <button className="btn btn-primary" type="button">Continue Shopping</button>
+                <ContinueButton className="btn btn-primary" type="button">Continue Shopping</ContinueButton>
             </Link>
-        </div>
+        </Wrapper>
         </>
         )
     }
 
     return (
         <>
-            <h1>Tu carrito</h1>
-            <div className="cartwrapper">
-                <div className="wrapper-cartrender">
+            <Title>Tu carrito</Title>
+            <CartContainer>
+                <CartRenderContainer>
                 {
                     carrito.cartList.map(item => <CartRender key={item.id} id={item.id} price={item.price} quantity={item.quantity} title={item.title} picture={item.picture} />)
                 }
-                </div>
-                <div className="wrapper-cartinfo">
-                    <div className="cartinfo">
-                        <div className="cartinfo-titulo">Carrito</div>
-                        <div className="cartinfo-subtotal">Subtotal: ${calcSubtotal()}</div>
-                        <div className="cartinfo-taxes">Taxes: ${calcTaxes()}</div>
-                        <div className="cartinfo-total">Total: ${calcTotal()}</div>
-                        <button className="cartinfo-checkout btn btn-success" type="button" onClick={createOrder}>Checkout</button>
-                    </div>
-                </div> 
-            </div>                
+                </CartRenderContainer>
+                <CartInfoContainer>
+                    <CartInfo>
+                        <CartInfoTitle>Carrito</CartInfoTitle>
+                        <CartInfoSubtotal>Subtotal: ${calcSubtotal()}</CartInfoSubtotal>
+                        <CartInfoTaxes>Impuestos: ${calcTaxes()}</CartInfoTaxes>
+                        <CartInfoTotal>Total: ${calcTotal()}</CartInfoTotal>
+                        <CartCheckoutButton className="btn btn-success" type="button" onClick={createOrder}>Checkout</CartCheckoutButton>
+                    </CartInfo>
+                </CartInfoContainer> 
+            </CartContainer>                
             <div className="cart-bottom">
-                <button className="delete-button btn btn-danger" type="button" onClick={deleteCart}>Eliminar todos</button>
+                <DeleteAllItemsButton className="btn btn-danger" type="button" onClick={deleteCart}>Eliminar todos</DeleteAllItemsButton>
             </div>
 
         </>

@@ -1,7 +1,7 @@
 import ItemDetail from './ItemDetail.js';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { firestoreFetchOne } from './firebaseFetch.js';
+import { firestoreFetchOne } from '../utils/firebaseFetch.js';
 
 
 const ItemDetailContainer = () => {

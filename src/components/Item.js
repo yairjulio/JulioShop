@@ -1,21 +1,24 @@
 import { Link } from 'react-router-dom';
+import { ItemContainer, ItemCard, ItemCardImage, ItemCardPrice, ItemCardStock, ItemCardStockValue, ItemCardTitle, ItemCardType } from '../utils/StyledComp.js';
 
 const Item = (props) => {
     return(
     <>
-        <div className="wrapper">
-            <div className="card-producto">
-                <div className="card-producto_imagen">
+        <ItemContainer>
+            <ItemCard>
+                <ItemCardImage>
                     <img src={props.picture} className="img-fluid" alt="producto" />
-                </div>
-                <div className="card-producto_tipo">{props.type}</div>
-                <div className="card-producto_titulo">{props.title}</div>
-                <div className="card-producto_precio">Precio: ${props.price}</div>
-                <div className="card-producto_stock">
-                    <Link to={`/item/${props.id}`} style={{ color: 'white', textDecoration:'none' }}><div className="valor">Mas Detalles</div></Link>
-                </div>
-            </div>
-        </div>
+                </ItemCardImage>
+                <ItemCardType>{props.type}</ItemCardType>
+                <ItemCardTitle>{props.title}</ItemCardTitle>
+                <ItemCardPrice>Precio: ${props.price}</ItemCardPrice>
+                <ItemCardStock>
+                    <Link to={`/item/${props.id}`} style={{ color: 'white', textDecoration:'none' }}>
+                        <ItemCardStockValue>Mas Detalles</ItemCardStockValue>
+                    </Link>
+                </ItemCardStock>
+            </ItemCard>
+        </ItemContainer>
     </>
     )
 }

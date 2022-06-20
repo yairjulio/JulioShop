@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget.js';
-import Shop from '../img/Shop.png';
 import { Link } from 'react-router-dom';
 import { CartContext } from './CartContext.js';
 import { useContext } from 'react';
@@ -15,7 +14,7 @@ const Navbar = () =>{
     return(
         <>
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-            <h1 className="navbar-brand"><img src={Shop} className="shopicon" alt="logo"/><Link to="/" style={{ color: 'white', textDecoration:'none' }}>FunkoShop</Link></h1>
+            <h1 className="navbar-brand"><img src="https://cdn-icons-png.flaticon.com/512/825/825575.png" className="shopicon" alt="logo"/><Link to="/" style={{ color: 'white', textDecoration:'none' }}>FunkoShop</Link></h1>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

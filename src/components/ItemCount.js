@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { NumberContainer, MinusButton, PlusButton, Input, AddToCartButton } from '../utils/StyledComp.js';
 
 
 const ItemCount = ({stock, initial, onAdd }) => {
@@ -16,15 +17,15 @@ const ItemCount = ({stock, initial, onAdd }) => {
 
     return(
         <>
-        <div className="number">
-            <span className="minus" onClick={decrement}>-</span>
-            <span className="input">{contador}</span>
-            <span className="plus" onClick={increment}>+</span>
-        </div>
+        <NumberContainer>
+            <MinusButton onClick={decrement}>-</MinusButton>
+            <Input>{contador}</Input>
+            <PlusButton onClick={increment}>+</PlusButton>
+        </NumberContainer>
         {
             stock
-            ?<button className="agregar-carrito btn btn-primary" type="button" onClick={() => onAdd(contador)}>Agregar al carrito</button>
-            :<button className="agregar-carrito btn btn-primary" type="button" disabled>Agregar al carrito</button>
+            ?<AddToCartButton className="btn btn-primary" type="button" onClick={() => onAdd(contador)}>Agregar al carrito</AddToCartButton>
+            :<AddToCartButton className="btn btn-primary" type="button" disabled>Agregar al carrito</AddToCartButton>
         }
         </>
     )
